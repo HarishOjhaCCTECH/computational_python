@@ -1,0 +1,39 @@
+import random
+from other.maths import Geometry
+
+
+m1 = Geometry()
+
+
+#print(m1.RandCoords()[0])
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create figure and axis
+fig, ax = plt.subplots()
+
+# Plot a square
+square = plt.Rectangle((0,0), 10,10, edgecolor='r', facecolor='none')
+ax.add_patch(square)
+
+# Plot a circle
+circle = plt.Circle((5, 5), 5, edgecolor='g', facecolor='none')
+ax.add_patch(circle)
+
+# Plot a point
+for j in range(10):
+    point = plt.Circle((m1.RandCoords()[0], m1.RandCoords()[1]), 0.03, color='b')
+    ax.add_patch(point)
+    
+
+# Set equal aspect ratio
+ax.set_aspect('equal')
+
+# Set axis limits
+ax.set_xlim(-1, 11)
+ax.set_ylim(-1, 11)
+
+# Show plot
+plt.show()
